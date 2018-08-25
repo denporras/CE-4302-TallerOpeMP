@@ -47,7 +47,7 @@ int main ()
 
 	step = 1.0/(double) num_steps;
 	/* Use double of system processors (threads) */
-	nprocs=2*omp_get_num_procs();
+	nprocs=100;
         /*Computes pi for each number of threads*/
 	for (i=1;i<=nprocs;i++){
 		sum = 0.0;
@@ -55,8 +55,6 @@ int main ()
 		start_time = omp_get_wtime();
 		#pragma omp parallel  
 		{
-			#pragma omp single
-			printf(" num_threads = %d",omp_get_num_threads());
 			#pragma omp for reduction(+:sum) private(x)
 			for (i=1;i<= num_steps; i++){
 				x = (i-0.5)*step;
@@ -66,7 +64,7 @@ int main ()
 	
 	pi = step * sum;
 	run_time = omp_get_wtime() - start_time;
-	printf("\n pi is %f in %f seconds and %d threads\n",pi,run_time,i);
+	printf("%f\t%d\n", run_time, i);
 	}
 }	  
 
