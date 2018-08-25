@@ -9,12 +9,12 @@ Se deben ejecutar los siguientes comandos con la consola en esta carpeta:
 
 ### Serial
 ```console
-usuario@TallerOpeMP:~$ gcc -o bin/pi_serial Ejercicio_Pi/pi.c -fopenmp && ./bin/pi_serial
+usuario@TallerOpeMP:~$ gcc -o bin/pi_serial Ejemplo_Pi/pi.c -fopenmp && ./bin/pi_serial
 ```
 
 ### Paralelo
 ```console
-usuario@TallerOpeMP:~$ gcc -o bin/pi_parallel Ejercicio_Pi/pi_par.c -fopenmp && ./bin/pi_parallel
+usuario@TallerOpeMP:~$ gcc -o bin/pi_parallel Ejemplo_Pi/pi_par.c -fopenmp && ./bin/pi_parallel
 ```
 ## Ejercicio SAXPY
 
